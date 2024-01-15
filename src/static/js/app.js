@@ -91,6 +91,7 @@ function AddItemForm({ onNewItem }) {
 
     return (
         <Form onSubmit={submitNewItem}>
+            <h1 className="text-center"> ToDo App by Rahman Md Mustafizur</h1>
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
