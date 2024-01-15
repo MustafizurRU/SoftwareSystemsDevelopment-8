@@ -13,6 +13,12 @@ function App() {
 
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
+    const headerStyle = {
+        textAlign: 'center',
+        fontSize: '24px',
+        fontWeight: 'bold',
+        marginBottom: '20px',
+    };
 
     React.useEffect(() => {
         fetch('/items')
@@ -51,6 +57,9 @@ function TodoListCard() {
 
     return (
         <React.Fragment>
+            <div style={headerStyle}>
+                <p>Rahman Md Mustafizur</p>
+            </div>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
                 <p className="text-center">No items yet! Add one above!</p>
@@ -91,7 +100,7 @@ function AddItemForm({ onNewItem }) {
 
     return (
         <Form onSubmit={submitNewItem}>
-            <h2 className="text-center"> ToDo App by Rahman Md Mustafizur</h2>
+            {/*<h2 className="text-center"> ToDo App by Rahman Md Mustafizur</h2>*/}
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
